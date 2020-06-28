@@ -167,9 +167,9 @@ LocalisonPlural _sr_rule() {
     return LocalisonPlural.one;
   }
   if (_v == 0 &&
-      _i % 10 >= 2 &&
-      _i % 10 <= 4 &&
-      (_i % 100 < 12 || _i % 100 > 14) ||
+          _i % 10 >= 2 &&
+          _i % 10 <= 4 &&
+          (_i % 100 < 12 || _i % 100 > 14) ||
       _f % 10 >= 2 && _f % 10 <= 4 && (_f % 100 < 12 || _f % 100 > 14)) {
     return LocalisonPlural.few;
   }

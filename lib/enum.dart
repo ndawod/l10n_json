@@ -33,6 +33,7 @@ final defaultQuantities = <LocalisonQuantity, int>{
   LocalisonQuantity.few: 6,
   LocalisonQuantity.many: 10,
 };
+
 /// Plural rules according to Unicode plural rules:
 /// https://www.unicode.org/cldr/charts/34/supplemental/language_plural_rules.html
 ///
@@ -64,7 +65,16 @@ extension ExtendedLocalisonPlural on LocalisonPlural {
 
 /// Gender types that Localison supports. If you'd like to see more types, please submit a pr.
 ///
-enum LocalisonGender { male, female, trans, agender, bigender, fluid, variant, other }
+enum LocalisonGender {
+  male,
+  female,
+  trans,
+  agender,
+  bigender,
+  fluid,
+  variant,
+  other
+}
 
 /// Extension functions for [LocalisonGender] class.
 ///

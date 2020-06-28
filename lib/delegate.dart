@@ -56,9 +56,9 @@ class LocalisonByLanguageDelegate extends LocalisonDelegate {
   /// Instantiates a new [LocalisonByLanguageDelegate] with support for the specified
   /// [locales].
   ///
-  LocalisonByLanguageDelegate(Iterable<Locale> locales, {bool cachable}) :
-      languages = locales.map((locale) => locale.languageCode.toLowerCase()),
-      super(locales, cachable: cachable);
+  LocalisonByLanguageDelegate(Iterable<Locale> locales, {bool cachable})
+      : languages = locales.map((locale) => locale.languageCode.toLowerCase()),
+        super(locales, cachable: cachable);
 
   /// Supported list of (2-letter) languages.
   final Iterable<String> languages;

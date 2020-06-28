@@ -89,7 +89,8 @@ class Localison {
         null == count ? _messages[resolvedKey] : _pluralize(resolvedKey, count);
 
     // The final message is guaranteed to never be null.
-    final message = null == localization ? (fallback ?? key) : localization.toString();
+    final message =
+        null == localization ? (fallback ?? key) : localization.toString();
 
     // If arguments were provided, apply them in the message.
     //
@@ -98,7 +99,9 @@ class Localison {
     // languages inherited from C should point to the string itself. Since this library can exist
     // in other apps, it's decided to follow the C notation here.
     // So we'll plug in the message string as a first argument and the user-supplied ones follow.
-    return (true == args?.isNotEmpty ? sprintf(message, <dynamic>[message, ...args]) : message)
+    return (true == args?.isNotEmpty
+            ? sprintf(message, <dynamic>[message, ...args])
+            : message)
         .trim();
   }
 
@@ -124,7 +127,8 @@ class Localison {
       _messages = _cache[locale];
     } else {
       final localeFile = _resolveLocaleFile(locale);
-      var jsonString = await rootBundle.loadString('$_baseDirectory/$localeFile.json');
+      var jsonString =
+          await rootBundle.loadString('$_baseDirectory/$localeFile.json');
 
       assert(jsonString.isNotEmpty);
       jsonString = jsonString.trim();
@@ -142,14 +146,19 @@ class Localison {
   }
 
   String _resolveLocaleFile(Locale locale) =>
-      locale.languageCode == _baseLocale.languageCode ? 'base' : locale.toString().toLowerCase();
+      locale.languageCode == _baseLocale.languageCode
+          ? 'base'
+          : locale.toString().toLowerCase();
 
-  String _resolveKey(String key, num count, LocalisonGender gender, bool quantify) {
+  String _resolveKey(
+      String key, num count, LocalisonGender gender, bool quantify) {
     // The effective key to look for.
     final effectiveKey = null == gender ? key : '$key$separator${gender.name}';
 
     // Are we looking for a pluralized message?
-    return null == count ? effectiveKey : _pluralizeKey(effectiveKey, count, quantify);
+    return null == count
+        ? effectiveKey
+        : _pluralizeKey(effectiveKey, count, quantify);
   }
 
   String _pluralizeKey(String key, num count, bool quantify) {
@@ -163,16 +172,19 @@ class Localison {
 
   dynamic _pluralize(String resolvedKey, num count, [int precision = 0]) {
     final dynamic pluralValue = _messages[resolvedKey];
-    assert(null != pluralValue, 'Plural key \'$resolvedKey\' not found for count ($count).');
+    assert(null != pluralValue,
+        'Plural key \'$resolvedKey\' not found for count ($count).');
     final pluralMessage = pluralValue.toString();
-    assert(pluralMessage.isNotEmpty, 'Plural key \'$resolvedKey\' for count ($count) is empty.');
+    assert(pluralMessage.isNotEmpty,
+        'Plural key \'$resolvedKey\' for count ($count) is empty.');
 
     return sprintf(pluralMessage, <num>[count, count]);
   }
 
   /// Implements the logic for plural selection.
   ///
-  static LocalisonPlural pluralLogic(num count, Locale locale, [int precision = 0]) {
+  static LocalisonPlural pluralLogic(num count, Locale locale,
+      [int precision = 0]) {
     assert(null != count);
     assert(null != locale);
 
@@ -218,7 +230,8 @@ class Localison {
 
   /// Returns the closest [Localison] instance to the passed [context].
   ///
-  static Localison of(BuildContext context) => Localizations.of<Localison>(context, Localison);
+  static Localison of(BuildContext context) =>
+      Localizations.of<Localison>(context, Localison);
 
   /// Returns the base directory where JSON files are loaded from, defaults to 'res/l10n'.
   ///
