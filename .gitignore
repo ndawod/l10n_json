@@ -1,0 +1,17 @@
+.DS_Store
+.dart_tool/
+.DISABLED/
+
+.packages
+.pub/
+
+.idea/*
+!.idea/codeStyles/
+!.idea/copyright/
+
+build/
+
+.flutter-plugins
+.flutter-plugins-dependencies
+
+pubspec.lock
