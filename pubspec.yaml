@@ -21,7 +21,7 @@
 
 name: "localison"
 description: "Provides localization support to a Flutter app using JSON files."
-version: "0.0.4"
+version: "0.0.5"
 homepage: "https://github.com/ndawod"
 
 environment:
@@ -39,21 +39,3 @@ dev_dependencies:
     sdk: "flutter"
 
   pedantic: "1.9.0"
-
-# The following section is specific to Flutter.
-flutter:
-  plugin:
-    platforms:
-      android:
-        package: "com.example.localison"
-        pluginClass: "LocalisonPlugin"
-      ios:
-        pluginClass: "LocalisonPlugin"
-      web:
-        pluginClass: "LocalisonPlugin"
-      linux:
-        pluginClass: "LocalisonPlugin"
-      windows:
-        pluginClass: "LocalisonPlugin"
-      macos:
-        pluginClass: "LocalisonPlugin"
