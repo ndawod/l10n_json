@@ -21,7 +21,7 @@
 
 name: "localison"
 description: "Provides localization support to a Flutter app using JSON files."
-version: "0.0.5"
+version: "0.0.6"
 homepage: "https://github.com/ndawod"
 
 environment:
@@ -32,10 +32,10 @@ dependencies:
   flutter:
     sdk: "flutter"
 
-  sprintf: "^4.0.2"
+  sprintf: "5.0.0"
 
 dev_dependencies:
   flutter_test:
     sdk: "flutter"
 
-  pedantic: "1.9.0"
+  pedantic: "1.9.2"
