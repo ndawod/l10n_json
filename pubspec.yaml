@@ -32,7 +32,7 @@ dependencies:
   flutter:
     sdk: "flutter"
 
-  sprintf: "5.0.0"
+  sprintf: "^5.0.0"
 
 dev_dependencies:
   flutter_test:
